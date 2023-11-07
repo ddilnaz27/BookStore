@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookWorm</title>
+    <link rel="icon" type="image/x-icon" href="image/bookfav.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!--mouseover event listener-->
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "BOOKSTORE"
+    }
+    function mOut(obj) {
+        obj.innerHTML = "BOOKWORM"
+    }
+</script>
+<!--keyup event listener-->
+<script>
+    function myFunction() {
+      let x = document.getElementById("email");
+      x.value = x.value.toLowerCase();   //JS method//
+    }
+</script>
+<!--click event listener-->
+<script>
+    function changeText(id) {
+      id.innerHTML = "Continue :D";
+    }
+</script>
+<!--JS animation-->
+<script>
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+function handleFloatingAnimation() {
+    const servicesSection = document.getElementById('servicesSection');
+    const serviceCards = document.querySelectorAll('.services_card');
+
+    function animateCards() {
+        serviceCards.forEach((card, index) => {
+            card.style.animation = `floatUpDown 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+    }
+
+    function checkVisibilityAndAnimate() {
+        if (isInViewport(servicesSection)) {
+            animateCards();
+            window.removeEventListener('scroll', checkVisibilityAndAnimate);
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibilityAndAnimate);
+}
+
+window.addEventListener('load', handleFloatingAnimation);
+
+</script>
+</head>
+
+<body>
+    
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="logo">
+                <img src="image/booklogo.png">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#featured">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newarrivals.html">Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="randombook.html">Randomizer</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+        <div class="topnav">
+            <div class="login-container">
+              <form>
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+              </form>
+            </div>
+        </div>
+    </nav>
+
+        
+
+        <div class="main" id="home">
+                    <div class="main_tag">
+                        <!-- Mouseover EVENT -->
+                        <h1>WELCOME TO<br><span onmouseover="mOver(this)" onmouseout="mOut(this)">BOOKWORM</span></h1>
+                        <p>One of the big bookstores in Kazakhstan, which has a huge variety of paper books and e-books of authors from all over the world in all genres.</p>
+                        <a href="#about" class="btn btn-dark">See more</a>
+                    </div>
+                    <div class="main_img">
+                        <img src="image/homebook1.png" class="img-fluid" alt="Book Image">
+                    </div>
+        </div>
+        
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!--Services-->
+
+    <div class="services">
+
+        <div class="services_box">
+
+            <div class="services_card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Services</h3>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-tag"></i>
+                <h3>Best Deal</h3>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Secure Payment</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+<!--JS Sound-->
+    <audio id="myAudio">
+        <source src="papersound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+      
+      <script>
+      var x = document.getElementById("myAudio"); 
+      
+      function playAudio() { 
+        x.play(); 
+      } 
+      
+      function pauseAudio() { 
+        x.pause(); 
+      } 
+      </script>
+
+
+
+    <!--About-->
+
+    <div class="about" id="about">
+
+        <div class="about_image">
+            <img src="image/aboutus.png">
+        </div>
+        <div class="about_tag">
+            <h1>ABOUT US</h1>
+            <p>
+                Welcome to our beloved bookstore, where pages brim with enchanting tales 
+                and wisdom awaits between every cover. Our shelves hold a diverse array 
+                of genres, from timeless classics to contemporary bestsellers, offering 
+                something for every reader's delight. Our passionate and knowledgeable 
+                staff are here to guide you through this literary adventure, helping you 
+                discover new favorites and hidden gems. Join us in celebrating the magic 
+                of storytelling and let our shelves be the gateway to your next great reading escape.
+            </p>
+            <a href="#featured" class="btn btn-light" onclick="changeText(this)">Learn more</a>
+            <button onclick="playAudio()" class="btn btn-warning">Click</button>
+        </div>
+
+    </div>
+
+
+    <!--Books-->
+    <div class="featured_books" id="featured">
+<!--JS Sound-->
+
+        <h1>FEATURED BOOKS</h1>
+        <div class="featured_book_box">
+            <div class="featured_book_card">
+                <div class="featured_book_img">
+                    <img src="image/book_1.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Зеленая миля</h4>
+                    <p class="writer">Стивен Кинг</p>
+                    <div class="categories">Триллер, фантастика, роман</div>
+                    <p class="book_price">2490 KZT<sub><del>3290</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_2.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Джейн Эйр</h4>
+                    <p class="writer">Шарлоттта Бронте</p>
+                    <div class="categories">Автобиография, Роман</div>
+                    <p class="book_price">3190 KZT<sub><del>3990</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_3.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Мертвая зона</h4>
+                    <p class="writer">Стивен Кинг</p>
+                    <div class="categories">Триллер, фантастика, роман</div>
+                    <p class="book_price">2890 KZT<sub><del>3690</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_4.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Великий Гэтсби</h4>
+                    <p class="writer">Ф.С. Фицджеральд</p>
+                    <div class="categories">Роман, Трагедия</div>
+                    <p class="book_price">2190 KZT<sub><del>2890</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_5.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Clever Lands</h4>
+                    <p class="writer">Lucy Crehan</p>
+                    <div class="categories">Psychology, Romance</div>
+                    <p class="book_price">2790 KZT<sub><del>3390</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_8.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Смерть на Ниле</h4>
+                    <p class="writer">Агата Кристи</p>
+                    <div class="categories">Триллер, Детектив, Роман</div>
+                    <p class="book_price">1290 KZT<sub><del>1890</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_6.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Свидание со смертью</h4>
+                    <p class="writer">Агата Кристи</p>
+                    <div class="categories">Роман, Триллер, Детектив</div>
+                    <p class="book_price">1390 KZT<sub><del>2890</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featured_book_img">
+                    <img src="image/book_7.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h4>Загадочное происшествие</h4>
+                    <p class="writer">Агата Кристи</p>
+                    <div class="categories">Детектив, Роман</div>
+                    <p class="book_price">1690 KZT<sub><del>2190</del></sub></p>
+                    <a href="newarrivals.html" class="btn btn-dark">See</a>
+                </div>               
+
+            </div>
+
+
+            
+        </div>
+    </div>
+    <!--JS Sound-->
+    <script>
+    var x = document.getElementById("myAudio"); 
+    
+    function playAudio() { 
+      x.play(); 
+    } 
+    
+    function pauseAudio() { 
+      x.pause(); 
+    } 
+    </script>
+
+    <!--Banner-->
+
+    <div class="banner">
+        <a href="newarrivals.html" class="banner_btn">Learn More</a>
+    </div>
+
+    <!--Reviews-->
+
+    <div class="reviews" id="reviews">
+        <h1>REVIEWS</h1>
+
+        <div class="review_box">
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_1.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Arman Akim</h2>
+                    <p>Жылдам жеткізу әрі сапалы кітаптар екен. Рахмет!
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_2.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Vlad Ivanov</h2>
+                    <p>Книги доставили быстро, качество отличное!</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_3.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Sarah John</h2>
+                    <p>I have ordered books on Monday and get them on the next day :D</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_4.jpeg">
+                </div>
+                <div class="card">
+                    <h2>Sara Maksat</h2>
+                    <p>The quality of books is perfect, recommend Bookworm!</p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--Footer-->
+
+    <footer>
+        <div class="footer_main">
+
+            <div class="tag">
+                <img src="image/booklogo.png">
+                <p>
+                    Astana<br>
+                    Karaganda<br>
+                    Almaty<br>
+                    Shymkent<br>
+                    Aktobe<br>
+                    Semey<br>
+                    Pavlodar
+                </p>
+
+            </div>
+
+            <div class="tag">
+                <h1>Quick Link</h1>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#featured">Featured</a>
+                <a href="newarrivals.html">Arrivals</a>
+                <a href="#reviews">Reviews</a>
+                <a href="randombook.html">Randomizer</a>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Contact Info</h1>
+                <a href="#"><i class="fa-solid fa-phone"></i>+7708 978 2017</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i>ddilnaz27@inbox.ru</a>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Follow Us</h1>
+                <div class="social_link">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <a href="https://instagram.com/_ddilnaaz_?igshid=NzZlODBkYWE4Ng=="><i class="fa-brands fa-instagram"></a></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Newsletter</h1>
+                <div class="search_bar">
+<!--keypress-->
+                    <input type="text" id="email" onkeyup="myFunction()" placeholder="You email here">
+                    <button type="submit">Subscribe</button>
+                </div>                
+            </div>            
+            
+        </div>
+
+        <p class="end">Design by<span><i class="fa-solid fa-heart"></i>Dilnaz Doskyzy</span></p>
+
+    </footer>
+    
+</body>
+</html>
